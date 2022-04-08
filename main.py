@@ -1,5 +1,8 @@
 import string
 import random
+import socket
+from threading import *
+import time
 from random import randint
 import base64
 import asyncio
@@ -14,6 +17,7 @@ from selenium import webdriver
 sys.tracebacklimit = 0
 
 def Spinner():
+    os.system(f'cls & mode 85,20 & title Xyla 1.0.0 - Loading . . .') 
     l = ['|', '/', '-', '\\', '-']
     for i in l+l+l:
         sys.stdout.write(f'\rWelcome to Xyla Baboon...'+i)
@@ -21,7 +25,16 @@ def Spinner():
         time.sleep(0.2)
 Spinner()
 
-tokentype = input(f"\nBot or User token <bot/user>: ")
+os.system(f'cls & mode 85,20 & title Xyla 1.0.0 - Login.') 
+print(f'''
+\033[0;31m                      ═╗ ╦╦ ╦╦  ╔═╗  ╔╦╗╦ ╦╦ ╔╦╗╦  ╔╦╗╔═╗╔═╗╦  
+\033[90m                      ╔╩╦╝╚╦╝║  ╠═╣  ║║║║ ║║  ║ ║───║ ║ ║║ ║║  
+{Fore.WHITE}                      ╩ ╚═ ╩ ╩═╝╩ ╩  ╩ ╩╚═╝╩═╝╩ ╩   ╩ ╚═╝╚═╝╩═╝
+
+
+
+ ''')
+tokentype = input(f"Bot or User token <bot/user>: ")
 while tokentype !="bot" and tokentype != "user":
   print(f"{Fore.RED}Invalid option")
   tokentype = input(f"\nBot or User token <bot/user>: ")
@@ -205,10 +218,6 @@ def destroy():
   threading.Thread(target=statusrape).start()
   threading.Thread(target=seizure).start()
   threading.Thread(target=langrape).start()
-  
- 
-
-
 
 @client.event
 async def on_ready():
@@ -348,11 +357,11 @@ def tokeninfo():
 """) 
 
 def credit():
-  print(''' Xyla Multi-Tool was made by fbi#1234
+  print(Fore.GREEN+''' Xyla Multi-Tool was made by fbi#1234
             and by raze#0006 Xyla was created at 3/23/22
             we both worked hard to make Xyla so if you skid
             we will both fuck your mothers fucking skiddies :)
-                      fed's github >> wavale''')
+                      fed's github >> wavale''')      
 
 def to_back():
  xyla()
@@ -370,15 +379,15 @@ def xyla():
                   ╔═════════════════════XY LA══════════════════════╗
                   ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}1{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Nitro Gen          ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}5{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Account Nuker       ║
                   ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}2{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Token Info Grabber ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}6{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Server Spammer      ║
-                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}3{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Token Gen          ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}7{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Credits             ║
-                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}4{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Ip Info Lookup     ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}8{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Token Login         ║
+                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}3{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Token Gen          ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}7{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Token Login         ║
+                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}4{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Ip Info Lookup     ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}8{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Credits             ║
                   ╚═════════════════════LA XY══════════════════════╝
                                        [9] Exit
 
 
 
 ''')
-  blackie = input(Fore.RED + Style.DIM + f'''{Fore.WHITE}┌──{Fore.RED}{Style.DIM}({Fore.WHITE}root@xyla{Fore.RED}{Style.DIM}) -{Fore.WHITE}[{Fore.RED}{Style.DIM}-{Fore.WHITE}]:
+  blackie = input(Fore.RED + Style.DIM + f'''{Fore.WHITE}┌──{Fore.RED}{Style.DIM}({Fore.WHITE}root@xyla{Fore.RED}{Style.DIM}) -{Fore.WHITE}[{Fore.RED}{Style.DIM}!{Fore.WHITE}]:
 └─{Fore.RED}{Style.DIM}${Fore.WHITE}: ''')
   if blackie == '1':
     clear()
@@ -403,17 +412,16 @@ def xyla():
     clear()
     serverspam()
     asyncio.sleep(3)
-  if blackie == '7':
+  if blackie == '8':
     clear()
     credit()
-  if blackie == '8':
+  if blackie == '7':
     clear()
     tokenLogin()
     asyncio.sleep(3)
   if blackie == '9':
     clear()
     exit()
-
 
 
 if type == "Human":

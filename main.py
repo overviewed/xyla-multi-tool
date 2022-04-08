@@ -1,24 +1,16 @@
-from pystyle import Colors, Colorate
 import string
 import random
-import aiohttp
 from random import randint
 import base64
-import datetime as dt
-from colored import fg, attr
 import asyncio
 import threading
-from aiohttp import web
 from itertools import cycle
 import requests, os, sys, discord, time, os.path
 from discord.ext import commands
-import colorama, os, ctypes, requests, string, random, json
-from colorama import Fore, init, Style
-from discord.webhook import Webhook
-from time import sleep
+import colorama, os, json
+from colorama import Fore, Style
 from lxml.html import fromstring
 from selenium import webdriver
-from dhooks import Webhook
 sys.tracebacklimit = 0
 
 def Spinner():
@@ -29,10 +21,10 @@ def Spinner():
         time.sleep(0.2)
 Spinner()
 
-tokentype = input(f"\n\x1b[38;5;196mBot or User token <bot/user>: ")
+tokentype = input(f"\nBot or User token <bot/user>: ")
 while tokentype !="bot" and tokentype != "user":
-  print(f"\x1b[38;5;196mInvalid option")
-  tokentype = input(f"\x1b[38;5;196mBot or User token <bot/user>: ")
+  print(f"{Fore.RED}Invalid option")
+  tokentype = input(f"\nBot or User token <bot/user>: ")
 
 token = input(f'TOKEN : ')
 if tokentype == "bot":
@@ -48,7 +40,6 @@ client.remove_command('help')
 colorama.init()
 with open('config.json') as f:
     data = json.load(f)
-    token = data["TOKEN"]
     servername= data["SERVERNAME"]
 headers = {
  'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.12) Gecko/20050915 Firefox/1.0.7',
@@ -56,15 +47,6 @@ headers = {
  'Authorization': token,
 }
 
-async def login():
-  async with aiohttp.ClientSession(headers=headers) as penis:
-    async with penis.get("https://discord.com/api/v9/users/@me/library") as response:
-      if response.status == 200:
-        print(f"Valid token")
-        pass
-      if response.status == 403:
-        print("Locked Token")
-        return
 
 #NUKE ACTIONS
 

@@ -10,6 +10,13 @@ Xyla Multi-Tool - not finished
 - Account Nuker
 - Server Spammer
 - Token Login
+-  Server Lister
+-
+## Updates
+- added Server Lister
+- cleaned up the menu a little
+- loading page
+- login page
 
 # How to install Python
 1. go to https://www.python.org/
@@ -24,14 +31,13 @@ Xyla Multi-Tool - not finished
 
 ## What i want to add
 - [X] - Mass DMer
-- [X] - Basic TCP Port Scanner
 - [X] - Name Changer
 
 ## Xyla Menu (old)
 <img src="https://cdn.discordapp.com/attachments/715735357290840188/961907071811485706/unknown.png">
 
 ## Xyla Menu (new)
-<img src="https://cdn.discordapp.com/attachments/956902577088376874/962090010289520760/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/962387650097082438/962802009268953098/unknown.png">
 
 ## Credits
 - fed#1234

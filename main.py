@@ -227,7 +227,7 @@ async def on_ready():
     f = open("servers.txt", "a+")
     f.write(f"{server.id}\n")
   clear()
-  xyla() 
+  await xyla() 
   
 def clear():
   if sys.platform.startswith("win"):
@@ -356,17 +356,31 @@ def tokeninfo():
           Public flags: {public_flags}
 """) 
 
+async def Servers():
+  index = 0
+  for guild in client.guilds:
+    index += 1
+    guilds = len(client.guilds)
+    channel = guild.text_channels[0]
+    members = len(guild.members)
+    print(f"{index}/{guilds} | Guild Name: {guild.name} | Guild ID: {guild.id} | Guild Member count: {members}")
+  input(f"Tasks Completed\nPress Enter to continue")
+  os.system('cls' if os.name == 'nt' else 'clear')
+  await xyla()
+
+
 def credit():
-  print(Fore.GREEN+''' Xyla Multi-Tool was made by fbi#1234
-            and by raze#0006 Xyla was created at 3/23/22
-            we both worked hard to make Xyla so if you skid
+  print(Fore.GREEN+'''
+            xyla Multi-Tool was made by fbi#1234
+            and by raze#0006 xyla was created at 3/23/22
+            we both worked hard to make xyla so if you skid
             we will both fuck your mothers fucking skiddies :)
                       fed's github >> wavale''')      
 
-def to_back():
- xyla()
-def xyla():
-  os.system(f'cls & mode 85,20 & title Xyla 1.0.0 - by fed#1234, raze#0006') 
+async def to_back():
+ await xyla()
+async def xyla():
+  os.system(f'cls & mode 85,20 & title Xyla 1.0.0 - by fed, loopy') 
   print(f'''
 {Fore.RED} {Style.BRIGHT}
 
@@ -377,14 +391,13 @@ def xyla():
                                •▀▀ ▀▀  ▀ • .▀▀▀  ▀  ▀ 
                                By: {Fore.WHITE}fed#1234{Fore.RED}, {Fore.WHITE}raze#0006{Fore.RED}
                   ╔═════════════════════XY LA══════════════════════╗
-                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}1{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Nitro Gen          ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}5{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Account Nuker       ║
-                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}2{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Token Info Grabber ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}6{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Server Spammer      ║
-                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}3{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Token Gen          ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}7{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Token Login         ║
-                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}4{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Ip Info Lookup     ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}8{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Credits             ║
+                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}1{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Nitro Gen          ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}6{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Server Spammer      ║
+                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}2{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Token Info Grabber ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}7{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Token Login         ║
+                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}3{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Token Gen          ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}8{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Server List         ║
+                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}4{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Ip Info Lookup     ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}9{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Credits             ║
+                  ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}5{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Account Nuker      ║{Fore.WHITE}[{Fore.RED}{Style.BRIGHT}10{Fore.WHITE}]{Fore.RED}{Style.BRIGHT} Exit               ║
                   ╚═════════════════════LA XY══════════════════════╝
-                                       [9] Exit
-
-
+                                       
 
 ''')
   blackie = input(Fore.RED + Style.DIM + f'''{Fore.WHITE}┌──{Fore.RED}{Style.DIM}({Fore.WHITE}root@xyla{Fore.RED}{Style.DIM}) -{Fore.WHITE}[{Fore.RED}{Style.DIM}!{Fore.WHITE}]:
@@ -412,16 +425,19 @@ def xyla():
     clear()
     serverspam()
     asyncio.sleep(3)
-  if blackie == '8':
+  if blackie == '9':
     clear()
     credit()
   if blackie == '7':
     clear()
     tokenLogin()
     asyncio.sleep(3)
-  if blackie == '9':
+  if blackie == '10':
     clear()
     exit()
+  if blackie == '8':
+    clear()
+    await Servers()
 
 
 if type == "Human":
@@ -435,4 +451,4 @@ elif type == "Bot":
     client.run(token, bot=True)
   except discord.errors.LoginFailure as e:
     print(f"Invalid Token: {e}")
-  
+ 

@@ -1,6 +1,6 @@
 # Xyla
 
-Xyla Multi-Tool - not finished
+Xyla Multi-Tool - finished
 
 ## Features
 - Nitro Generator
